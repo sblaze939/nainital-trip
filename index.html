@@ -125,39 +125,39 @@ body{
 .start-hint{font-size:.68rem;color:var(--muted);opacity:.65;}
 
 /* Slots — card style */
-.slots{padding:10px 14px 16px;display:flex;flex-direction:column;gap:8px;background:var(--surface2);}
+.slots{padding:12px 14px 18px;display:flex;flex-direction:column;gap:10px;background:var(--surface2);}
 .slot{
   display:flex; align-items:stretch;
-  background:var(--surface); border-radius:12px; overflow:hidden;
+  background:var(--surface); border-radius:14px; overflow:hidden;
   cursor:pointer; -webkit-tap-highlight-color:transparent;
-  box-shadow:0 1px 3px rgba(0,0,0,.06);
+  box-shadow:0 1px 4px rgba(0,0,0,.07);
   transition:opacity .12s;
 }
 .slot:active{opacity:.75;}
-.slot-accent{width:4px;flex-shrink:0;align-self:stretch;}
+.slot-accent{width:5px;flex-shrink:0;align-self:stretch;}
 .slot-num{
-  width:28px;flex-shrink:0;padding:13px 0 13px 10px;
-  font-size:.6rem;font-weight:700;color:var(--muted);
+  width:32px;flex-shrink:0;padding:15px 0 14px 11px;
+  font-size:.68rem;font-weight:700;color:var(--muted);
   font-variant-numeric:tabular-nums;display:flex;align-items:flex-start;
 }
-.slot-body{flex:1;padding:10px 8px 10px 10px;min-width:0;}
+.slot-body{flex:1;padding:13px 10px 13px 10px;min-width:0;}
 .slot-time{
-  font-size:.63rem;font-weight:600;letter-spacing:.04em;
+  font-size:.7rem;font-weight:600;letter-spacing:.04em;
   color:var(--muted);text-transform:uppercase;font-variant-numeric:tabular-nums;
-  margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  margin-bottom:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;
 }
-.slot-name{font-weight:500;color:var(--txt);font-size:.83rem;line-height:1.42;}
-.slot-warn{font-size:.68rem;font-weight:600;color:#d05a38;margin-top:5px;}
+.slot-name{font-weight:500;color:var(--txt);font-size:.95rem;line-height:1.45;}
+.slot-warn{font-size:.74rem;font-weight:600;color:#d05a38;margin-top:6px;}
 .slot-check-btn{
-  width:44px;flex-shrink:0;display:flex;
+  width:48px;flex-shrink:0;display:flex;
   align-items:flex-start;justify-content:center;
-  padding-top:10px;user-select:none;
+  padding-top:13px;user-select:none;
 }
 .check-circle{
-  width:24px;height:24px;border-radius:50%;
+  width:28px;height:28px;border-radius:50%;
   border:2px solid var(--border);display:flex;
   align-items:center;justify-content:center;
-  font-size:.72rem;color:transparent;flex-shrink:0;
+  font-size:.8rem;color:transparent;flex-shrink:0;
   transition:background .15s,border-color .15s;
 }
 .slot.done .check-circle{background:#3aaa64;border-color:#3aaa64;color:#fff;}
