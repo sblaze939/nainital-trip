@@ -1,798 +1,446 @@
 <title>Nainital Oct 2026</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Nainital">
 <meta name="theme-color" content="#1c3829" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#f0ede7" media="(prefers-color-scheme: light)">
 <link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap">
 <style>
-  :root {
-    --bg: #f5f3ee;
-    --surface: #ffffff;
-    --surface2: #eef0eb;
-    --pine: #1c3829;
-    --lake: #2e7fa6;
-    --gold: #c9753a;
-    --mist: #ddeaf1;
-    --txt: #242820;
-    --muted: #6b7a70;
-    --border: #dcddd7;
-    --skip-bg: #fdf2ec;
-    --skip-border: #e8b48a;
-    --gem-bg: #eef5f0;
-    --gem-border: #86b898;
+:root {
+  --bg:#f5f3ee; --surface:#fff; --surface2:#eef0eb;
+  --pine:#1c3829; --lake:#2e7fa6; --gold:#c9753a;
+  --txt:#242820; --muted:#6b7a70; --border:#dcddd7;
+  --skip-bg:#fdf2ec; --skip-border:#e8b48a;
+  --gem-bg:#eef5f0; --gem-border:#86b898;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#151a14; --surface:#1e2419; --surface2:#252b20;
+    --pine:#8db89e; --lake:#6ab5d4; --gold:#d98c52;
+    --txt:#e8ebe3; --muted:#8a9a88; --border:#2e3628;
+    --skip-bg:#2a1e15; --skip-border:#8a5030;
+    --gem-bg:#162018; --gem-border:#3d6b4a;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #151a14;
-      --surface: #1e2419;
-      --surface2: #252b20;
-      --pine: #8db89e;
-      --lake: #6ab5d4;
-      --gold: #d98c52;
-      --mist: #1e2e38;
-      --txt: #e8ebe3;
-      --muted: #8a9a88;
-      --border: #2e3628;
-      --skip-bg: #2a1e15;
-      --skip-border: #8a5030;
-      --gem-bg: #162018;
-      --gem-border: #3d6b4a;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #151a14;
-    --surface: #1e2419;
-    --surface2: #252b20;
-    --pine: #8db89e;
-    --lake: #6ab5d4;
-    --gold: #d98c52;
-    --mist: #1e2e38;
-    --txt: #e8ebe3;
-    --muted: #8a9a88;
-    --border: #2e3628;
-    --skip-bg: #2a1e15;
-    --skip-border: #8a5030;
-    --gem-bg: #162018;
-    --gem-border: #3d6b4a;
-  }
+}
+:root[data-theme="dark"]{
+  --bg:#151a14; --surface:#1e2419; --surface2:#252b20;
+  --pine:#8db89e; --lake:#6ab5d4; --gold:#d98c52;
+  --txt:#e8ebe3; --muted:#8a9a88; --border:#2e3628;
+  --skip-bg:#2a1e15; --skip-border:#8a5030;
+  --gem-bg:#162018; --gem-border:#3d6b4a;
+}
+:root[data-theme="light"]{
+  --bg:#f5f3ee; --surface:#fff; --surface2:#eef0eb;
+  --pine:#1c3829; --lake:#2e7fa6; --gold:#c9753a;
+  --txt:#242820; --muted:#6b7a70; --border:#dcddd7;
+  --skip-bg:#fdf2ec; --skip-border:#e8b48a;
+  --gem-bg:#eef5f0; --gem-border:#86b898;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{
+  background:var(--bg); color:var(--txt);
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:15px; line-height:1.6;
+  padding-inline:20px;
+  padding-top:calc(20px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(48px + env(safe-area-inset-bottom,0px));
+  max-width:780px; margin-inline:auto;
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Header */
+.header{margin-bottom:20px;}
+.header-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.header-title{font-family:'Cormorant Garant',Georgia,serif;font-size:clamp(1.8rem,7vw,3rem);font-weight:700;color:var(--pine);line-height:1.1;text-wrap:balance;}
+.header-meta{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;}
+.meta-chip{font-size:.72rem;font-weight:500;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 10px;}
+.meta-chip strong{color:var(--txt);font-weight:600;}
 
-  body {
-    background: var(--bg);
-    color: var(--txt);
-    font-family: 'DM Sans', system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    padding-inline: 20px;
-    padding-block: 32px 48px;
-    max-width: 780px;
-    margin-inline: auto;
-  }
+/* Sticky day tab bar */
+.day-tabs-bar{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:50;
+  background:var(--bg);
+  border-bottom:2px solid var(--border);
+  display:flex;
+  align-items:stretch;
+  margin:0 -20px 24px;
+  padding:0 8px;
+}
+.day-tab{
+  flex:1; padding:10px 4px 8px; background:none;
+  border:none; border-bottom:2px solid transparent; margin-bottom:-2px;
+  cursor:pointer; text-align:center;
+  font-family:'DM Sans',system-ui,sans-serif;
+  transition:color .15s,border-color .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.day-tab-num{
+  display:block;
+  font-family:'Cormorant Garant',Georgia,serif;
+  font-size:1.5rem; font-weight:700; color:var(--muted); line-height:1;
+}
+.day-tab-sub{
+  display:block; font-size:.58rem; font-weight:600;
+  letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-top:2px;
+}
+.day-tab.active .day-tab-num{color:var(--pine);}
+.day-tab.active .day-tab-sub{color:var(--gold);}
+.day-tab.active{border-bottom-color:var(--pine);}
+.theme-btn{
+  background:none; border:none; cursor:pointer;
+  padding:10px 10px 8px; font-size:1.1rem; color:var(--muted);
+  display:flex; align-items:center; justify-content:center;
+  -webkit-tap-highlight-color:transparent; flex-shrink:0;
+}
+.theme-btn:hover{color:var(--txt);}
 
-  /* Header */
-  .header {
-    margin-bottom: 36px;
-  }
-  .header-eyebrow {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .header-title {
-    font-family: 'Cormorant Garant', Georgia, serif;
-    font-size: clamp(2rem, 7vw, 3.2rem);
-    font-weight: 700;
-    color: var(--pine);
-    line-height: 1.1;
-    text-wrap: balance;
-  }
-  .header-meta {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .meta-chip {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--muted);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 4px 12px;
-  }
-  .meta-chip strong { color: var(--txt); font-weight: 600; }
+/* Day card */
+.day{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:24px;}
+.day-header{display:flex;align-items:baseline;gap:12px;padding:16px 20px 14px;border-bottom:1px solid var(--border);background:var(--surface2);}
+.day-num{font-family:'Cormorant Garant',Georgia,serif;font-size:2.2rem;font-weight:700;color:var(--pine);line-height:1;}
+.day-info{flex:1;}
+.day-date{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);}
+.day-theme{font-family:'Cormorant Garant',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--txt);line-height:1.2;}
 
-  /* Travel note */
-  .travel-note {
-    background: var(--mist);
-    border-left: 3px solid var(--lake);
-    border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
-    margin-bottom: 32px;
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .travel-note strong { color: var(--lake); }
+/* Start time row */
+.start-row{
+  display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  padding:8px 16px; border-bottom:1px solid var(--border);
+  background:var(--surface2); font-size:.74rem;
+}
+.start-row label{font-weight:600;color:var(--muted);white-space:nowrap;flex-shrink:0;}
+.start-inp{
+  padding:4px 8px; border:1px solid var(--border); border-radius:6px;
+  background:var(--surface); color:var(--txt);
+  font-family:inherit; font-size:.78rem; font-weight:600; flex-shrink:0;
+}
+.start-delta{font-size:.7rem;font-weight:700;color:var(--gold);}
+.start-reset{
+  background:none; border:none; font-size:.7rem; color:var(--muted);
+  cursor:pointer; text-decoration:underline; font-family:inherit; padding:0; flex-shrink:0;
+}
+.start-hint{font-size:.68rem;color:var(--muted);opacity:.65;}
 
-  /* Day block */
-  .day {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-  .day-header {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 16px 20px 14px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
-  }
-  .day-num {
-    font-family: 'Cormorant Garant', Georgia, serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--pine);
-    line-height: 1;
-  }
-  .day-info { flex: 1; }
-  .day-date {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .day-theme {
-    font-family: 'Cormorant Garant', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--txt);
-    line-height: 1.2;
-  }
+/* Slots */
+.slots{padding:4px 0;}
+.slot{
+  display:grid; grid-template-columns:78px 1fr 34px;
+  border-bottom:1px solid var(--border);
+  cursor:pointer; -webkit-tap-highlight-color:transparent;
+  transition:background .1s;
+}
+.slot:last-child{border-bottom:none;}
+.slot:active{background:var(--surface2);}
+.slot-time{
+  padding:12px 8px 12px 14px; font-size:.66rem; font-weight:600;
+  letter-spacing:.02em; color:var(--muted); text-transform:uppercase;
+  border-right:1px solid var(--border);
+  display:flex; align-items:flex-start; padding-top:14px;
+  font-variant-numeric:tabular-nums;
+}
+.slot-body{padding:10px 10px 10px 12px;}
+.slot-name{font-weight:500;color:var(--txt);font-size:.82rem;line-height:1.45;}
+.slot-warn{font-size:.68rem;font-weight:600;color:#d05a38;margin-top:4px;}
+.slot-check{
+  display:flex; align-items:flex-start; justify-content:center;
+  padding-top:13px; font-size:.9rem; color:var(--border);
+  user-select:none; border-left:1px solid var(--border);
+}
+.slot.done .slot-check{color:var(--lake);}
+.slot.done .slot-time{opacity:.32;}
+.slot.done .slot-name{opacity:.32;text-decoration:line-through;}
 
-  /* Time blocks */
-  .slots { padding: 4px 0; }
-  .slot {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .slot:last-child { border-bottom: none; }
-  .slot-time {
-    padding: 12px 16px 12px 20px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    text-transform: uppercase;
-    border-right: 1px solid var(--border);
-    display: flex;
-    align-items: flex-start;
-    padding-top: 14px;
-  }
-  .slot-body {
-    padding: 12px 20px;
-  }
-  .slot-name {
-    font-weight: 600;
-    color: var(--txt);
-    font-size: 0.88rem;
-    line-height: 1.3;
-  }
-  .slot-note {
-    font-size: 0.76rem;
-    color: var(--muted);
-    margin-top: 3px;
-    line-height: 1.4;
-  }
-  .slot-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 6px;
-  }
-  .tag {
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 4px;
-  }
-  .tag-photo { background: rgba(46,127,166,0.12); color: var(--lake); }
-  .tag-food { background: rgba(201,117,58,0.12); color: var(--gold); }
-  .tag-spiritual { background: rgba(134,184,152,0.15); color: #4a8a5e; }
-  .tag-relax { background: rgba(107,122,112,0.12); color: var(--muted); }
-  .tag-drive { background: rgba(28,56,41,0.1); color: var(--pine); }
-  .tag-shopping { background: rgba(180,150,210,0.15); color: #7a52a0; }
+/* Type pills */
+.stype{
+  display:inline-block; font-size:.57rem; font-weight:700;
+  letter-spacing:.05em; text-transform:uppercase;
+  border-radius:3px; padding:1px 5px; margin-right:5px; vertical-align:middle;
+}
+.sw  {background:rgba(107,122,112,.12);color:var(--muted);}
+.sr  {background:rgba(201,117,58,.14); color:var(--gold);}
+.sa  {background:rgba(46,127,166,.14); color:var(--lake);}
+.sf  {background:rgba(180,150,210,.16);color:#7a52a0;}
+.sb  {background:rgba(134,184,152,.18);color:#3a7a52;}
+.sat {background:rgba(28,56,41,.1);    color:var(--pine);}
 
-  /* Two-column panels */
-  .panels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  @media (max-width: 520px) { .panels { grid-template-columns: 1fr; } }
+/* Skip/Gems panels */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+@media(max-width:520px){.panels{grid-template-columns:1fr;}}
+.panel{border-radius:12px;padding:16px 18px;}
+.panel-skip{background:var(--skip-bg);border:1px solid var(--skip-border);}
+.panel-gem {background:var(--gem-bg); border:1px solid var(--gem-border);}
+.panel-head{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.panel-skip .panel-head{color:#b06030;} .panel-gem .panel-head{color:#3a7a52;}
+.panel-item{display:flex;gap:8px;margin-bottom:8px;font-size:.8rem;line-height:1.4;}
+.panel-item:last-child{margin-bottom:0;}
+.panel-icon{flex-shrink:0;margin-top:1px;}
+.panel-item-name{font-weight:600;color:var(--txt);}
+.panel-item-why{color:var(--muted);font-size:.74rem;}
 
-  .panel {
-    border-radius: 12px;
-    padding: 16px 18px;
-  }
-  .panel-skip {
-    background: var(--skip-bg);
-    border: 1px solid var(--skip-border);
-  }
-  .panel-gem {
-    background: var(--gem-bg);
-    border: 1px solid var(--gem-border);
-  }
-  .panel-head {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .panel-skip .panel-head { color: #b06030; }
-  .panel-gem .panel-head { color: #3a7a52; }
+/* Food */
+.food-section{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:24px;}
+.food-header{padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface2);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.food-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));}
+.food-item{padding:11px 14px 11px 18px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.food-name{font-weight:600;font-size:.84rem;color:var(--txt);}
+.food-type{font-size:.72rem;color:var(--gold);font-weight:500;}
+.food-note{font-size:.72rem;color:var(--muted);margin-top:2px;}
 
-  .panel-item {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-  .panel-item:last-child { margin-bottom: 0; }
-  .panel-icon { flex-shrink: 0; margin-top: 1px; font-style: normal; }
-  .panel-item-body {}
-  .panel-item-name { font-weight: 600; color: var(--txt); }
-  .panel-item-why { color: var(--muted); font-size: 0.74rem; }
+/* Pack reminder */
+.reminder{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;font-size:.8rem;}
+.reminder-head{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.reminder-list{display:flex;flex-direction:column;gap:5px;}
+.reminder-item{display:flex;gap:8px;color:var(--muted);align-items:flex-start;}
+.reminder-item::before{content:'·';flex-shrink:0;color:var(--gold);font-weight:700;}
 
-  /* Food section */
-  .food-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-  .food-header {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .food-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0;
-  }
-  .food-item {
-    padding: 12px 16px 12px 20px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .food-item:nth-child(n):last-child,
-  .food-item:nth-last-child(-n+2) { border-bottom: none; }
-  .food-name { font-weight: 600; font-size: 0.84rem; color: var(--txt); }
-  .food-type { font-size: 0.72rem; color: var(--gold); font-weight: 500; }
-  .food-note { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
-
-  /* Documents reminder */
-  .reminder {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 20px;
-    font-size: 0.8rem;
-  }
-  .reminder-head {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .reminder-list {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .reminder-item {
-    display: flex;
-    gap: 8px;
-    color: var(--muted);
-    align-items: flex-start;
-  }
-  .reminder-item::before {
-    content: '·';
-    flex-shrink: 0;
-    color: var(--gold);
-    font-weight: 700;
-  }
-
-  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
-
-  /* Scooty panel */
-  .scooty-panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 28px;
-  }
-  .scooty-header {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .scooty-header-title {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .scooty-header-pill {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    background: rgba(201,117,58,0.12);
-    color: var(--gold);
-    border-radius: 10px;
-    padding: 2px 8px;
-  }
-  .scooty-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  }
-  .scooty-cell {
-    padding: 12px 16px 12px 20px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    font-size: 0.8rem;
-  }
-  .scooty-cell:last-child { border-right: none; }
-  .scooty-cell-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 3px;
-  }
-  .scooty-cell-val { font-weight: 600; color: var(--txt); }
-  .scooty-cell-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
-  .scooty-note {
-    padding: 10px 20px;
-    font-size: 0.76rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: var(--surface2);
-    line-height: 1.5;
-  }
-  .scooty-note strong { color: var(--txt); }
-
-  /* Theme toggle */
-  .theme-toggle {
-    position: fixed;
-    top: max(14px, env(safe-area-inset-top, 14px));
-    right: 16px;
-    z-index: 100;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-    font-family: 'DM Sans', system-ui, sans-serif;
-    letter-spacing: 0.03em;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  }
-  .theme-toggle:hover { color: var(--txt); }
-
-  /* Timeline type pills */
-  .stype {
-    display: inline-block;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 3px;
-    padding: 1px 6px;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-  .stype-wake   { background: rgba(107,122,112,0.12); color: var(--muted); }
-  .stype-ride   { background: rgba(201,117,58,0.14);  color: var(--gold); }
-  .stype-arrive { background: rgba(46,127,166,0.14);  color: var(--lake); }
-  .stype-food   { background: rgba(180,150,210,0.16); color: #7a52a0; }
-  .stype-back   { background: rgba(134,184,152,0.18); color: #3a7a52; }
-  .stype-at     { background: rgba(28,56,41,0.1);     color: var(--pine); }
-
+hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
 </style>
-
-<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">☀ Light</button>
 
 <div class="header">
   <div class="header-eyebrow">Couple's Trip</div>
   <div class="header-title">Nainital, October 2026</div>
   <div class="header-meta">
     <span class="meta-chip">Leave Gurugram <strong>9 Oct night</strong></span>
-    <span class="meta-chip">Arrive Nainital <strong>10 Oct, 7–8 AM</strong></span>
+    <span class="meta-chip">Arrive <strong>10 Oct, 7–8 AM</strong></span>
     <span class="meta-chip">Depart <strong>12 Oct night</strong></span>
     <span class="meta-chip"><strong>3 full days</strong></span>
   </div>
 </div>
 
-<!-- DAY 1 -->
-<div class="day">
-  <div class="day-header">
-    <div class="day-num">01</div>
-    <div class="day-info">
-      <div class="day-date">Friday, 10 October — Arrival</div>
-      <div class="day-theme">Lake, Town &amp; the Cable Car</div>
-    </div>
-  </div>
-  <div class="slots">
-    <div class="slot">
-      <div class="slot-time">7:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Wake</span>Wake up · check in · freshen up</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">7:40 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Food</span>Breakfast at Hot Breads, Mall Road · pastries + coffee · 30 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">9:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Naini Lake — boat ride · shikara or paddle boat ₹80–120 · 1 hr · best morning light before the rush</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">10:05 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Nanda Devi Temple (Maa Naina Devi) · 5 min walk from dock · one of 64 Shakti Peethas · 40 min darshan</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">10:50 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Walk to Sakley's · 10 min · go by 11 AM to beat the lunch queue</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">11:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Lunch</span>Sakley's Restaurant · Nainital's oldest, since 1950s · Continental + Indian · ~1.5 hrs</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">12:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Tibetan Market + Mall Road browse · woollen shawls, local honey, jam · 1.5 hrs walkable stretch</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">2:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Rest</span>Back at hotel · 1 hr break · charge devices · rest before cable car</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">3:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Walk →</span>Walk to Snow View cable car base, Mallital · 10 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">3:40 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Snow View Point · cable car ₹270 RT · 2270m · Nanda Devi peak views · golden hour till 5:50 PM · carry jacket</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">5:45 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Last cable car down · 5 min ride · back on Mall Road by 5:55 PM</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">7:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Dinner</span>Café Capri (lake-view balcony) or Embassy (old-school classic) · both on Mall Road</div></div>
-    </div>
-  </div>
+<div class="day-tabs-bar">
+  <button class="day-tab active" id="t0" onclick="showDay(0)">
+    <span class="day-tab-num">01</span>
+    <span class="day-tab-sub">Fri 10 Oct</span>
+  </button>
+  <button class="day-tab" id="t1" onclick="showDay(1)">
+    <span class="day-tab-num">02</span>
+    <span class="day-tab-sub">Sat 11 Oct</span>
+  </button>
+  <button class="day-tab" id="t2" onclick="showDay(2)">
+    <span class="day-tab-num">03</span>
+    <span class="day-tab-sub">Sun 12 Oct</span>
+  </button>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀</button>
 </div>
 
-<!-- DAY 2 -->
-<div class="day">
-  <div class="day-header">
-    <div class="day-num">02</div>
-    <div class="day-info">
-      <div class="day-date">Saturday, 11 October — Full Day</div>
-      <div class="day-theme">Ashram at Dawn, Hilltops &amp; Temples</div>
-    </div>
-  </div>
-  <div class="slots">
-    <div class="slot">
-      <div class="slot-time">5:45 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Wake</span>Wake up · quick hotel breakfast · ready by 6:00 AM sharp</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">6:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Kainchi Dham · 17 km east · 30 min scooty</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">6:30 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Kainchi Dham · aarti starts 6:45 AM · Neem Karoli Baba's ashram, cedar gorge setting · spend 1.5 hrs</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">8:15 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Golu Devta, Bhowali · 7 km further east · 15 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">8:30 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Golu Devta Temple, Bhowali · temple of thousand bells + handwritten letters · very photogenic · 45 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">9:15 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Nainital · 24 km west · 20 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">9:35 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Back in Nainital · 25 min freshen up before Tiffin Top</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">10:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Tiffin Top base · 10 min scooty northwest</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">10:10 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Tiffin Top · horse ride ₹350–500 or free trek · 4 km round trip · 360° valley + snow peak views · 2.5 hrs</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">12:40 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave Tiffin Top for town · 15 min walk/scooty back</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">1:00 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Lunch</span>Machan Rooftop Restaurant · lake view, good thalis · 1 hr</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">2:15 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Hanuman Garhi · 3 km northwest · 10 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">2:25 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Hanuman Garhi · hilltop temple, quiet, good valley views · 45 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">3:10 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>5 min to Gurney House</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">3:15 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Gurney House · Jim Corbett's former home · colonial architecture · great couple photo · 30 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">3:45 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Pangot · 15 km northwest · 25 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">4:10 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Pangot forest road · oak + rhododendron forest · slow ride, stop for photos · golden hour before sunset at 5:50 PM</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">5:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Head back from Pangot · 15 km · 25 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">5:55 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Back in Nainital</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">8:00 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Dinner</span>Sher-e-Punjab (Punjabi) or Zooby's Kitchen (lighter café food) · both near Mall Road</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- DAY 3 -->
-<div class="day">
-  <div class="day-header">
-    <div class="day-num">03</div>
-    <div class="day-info">
-      <div class="day-date">Sunday, 12 October — Last Day</div>
-      <div class="day-theme">The Lakes, Then Home</div>
-    </div>
-  </div>
-  <div class="slots">
-    <div class="slot">
-      <div class="slot-time">8:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Wake</span>Wake up · check out or leave luggage · quick breakfast at Hot Breads</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">9:00 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Bhimtal · 22 km east · 40 min scooty</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">9:40 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Bhimtal · larger than Naini Lake, far quieter · boating ₹100, island aquarium mid-lake · spend 1.5 hrs</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">11:15 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Naukuchiatal · 7 km · 15 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">11:30 AM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Naukuchiatal · nine-cornered lake · almost no tourists · completely serene · spend 1 hr</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">12:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Bhowali lunch dhabas · 15 km · 25 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">1:00 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Lunch</span>Bhowali road dhabas · alu ke gutke + bhatt ki dal · 1 hr</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">2:20 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Mall Road, Nainital · 10 km · 20 min</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">2:40 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Mall Road, Nainital · park scooty at Tallital lot (₹20/hr) · walk the road</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">2:40–5 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Last round on Mall Road · final shopping, chai + pakoras lakeside, photos · pick up Bal Mithai, Kumaoni honey, rhododendron jam</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">5:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Return scooty · pack bags · early dinner by 6:30 PM</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">6:30 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Dinner</span>Early dinner before the long drive · Sher-e-Punjab or Mall Road bites</div></div>
-    </div>
-    <div class="slot">
-      <div class="slot-time">7:30–8 PM</div>
-      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Drive →</span>Depart Nainital for Gurugram · ~7 hrs · stock up on water + snacks · arrive ~3–4 AM</div></div>
-    </div>
-  </div>
-</div>
+<div id="day-view"></div>
 
 <hr>
 
-<!-- Skip / Gems -->
 <div class="panels">
   <div class="panel panel-skip">
     <div class="panel-head">Skip These</div>
-    <div class="panel-item">
-      <span class="panel-icon">✕</span>
-      <div class="panel-item-body">
-        <div class="panel-item-name">Naina Zoo (High Altitude Zoo)</div>
-        <div class="panel-item-why">Average zoo, nothing special at this altitude. Not worth 2 hours of your time.</div>
-      </div>
-    </div>
-    <div class="panel-item">
-      <span class="panel-icon">✕</span>
-      <div class="panel-item-body">
-        <div class="panel-item-name">Eco Cave Garden</div>
-        <div class="panel-item-why">Commercial, basic artificial caves. Tourist trap. The ₹75 entry isn't worth it.</div>
-      </div>
-    </div>
-    <div class="panel-item">
-      <span class="panel-icon">✕</span>
-      <div class="panel-item-body">
-        <div class="panel-item-name">Naina Peak (China Peak)</div>
-        <div class="panel-item-why">12 km round trip serious trek, 4–5 hours. Snow View Point gives near-identical views in 1/5th the effort by cable car. Skip unless you're avid trekkers.</div>
-      </div>
-    </div>
+    <div class="panel-item"><span class="panel-icon">✕</span><div><div class="panel-item-name">Naina Zoo (High Altitude Zoo)</div><div class="panel-item-why">Average zoo, nothing special. Not worth 2 hours.</div></div></div>
+    <div class="panel-item"><span class="panel-icon">✕</span><div><div class="panel-item-name">Eco Cave Garden</div><div class="panel-item-why">Commercial artificial caves. Tourist trap. Skip.</div></div></div>
+    <div class="panel-item"><span class="panel-icon">✕</span><div><div class="panel-item-name">Naina Peak trek</div><div class="panel-item-why">12 km, 4–5 hrs. Snow View cable car gives same views in 1/5th the effort.</div></div></div>
   </div>
   <div class="panel panel-gem">
     <div class="panel-head">Hidden Gems</div>
-    <div class="panel-item">
-      <span class="panel-icon">◆</span>
-      <div class="panel-item-body">
-        <div class="panel-item-name">Naukuchiatal</div>
-        <div class="panel-item-why">Nine-cornered lake, 30 km from Nainital. Almost zero tourists. Surreally quiet for a Sunday.</div>
-      </div>
-    </div>
-    <div class="panel-item">
-      <span class="panel-icon">◆</span>
-      <div class="panel-item-body">
-        <div class="panel-item-name">Ramgarh Village</div>
-        <div class="panel-item-why">25 km from Nainital. "Fruit Bowl of Kumaon" — apple orchards mid-October, orchard views, almost no footfall. Great if you have a spare half-day.</div>
-      </div>
-    </div>
-    <div class="panel-item">
-      <span class="panel-icon">◆</span>
-      <div class="panel-item-body">
-        <div class="panel-item-name">Bal Mithai</div>
-        <div class="panel-item-why">Uttarakhand's signature sweet — roasted khoya coated in white sugar balls. Baba Misthan Bhandar on Mall Road makes the best. Buy a 500g box to take home.</div>
-      </div>
-    </div>
+    <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Naukuchiatal</div><div class="panel-item-why">Nine-cornered lake, 30 km out. Almost zero tourists even on a Sunday.</div></div></div>
+    <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Ramgarh Village</div><div class="panel-item-why">25 km away — apple orchards in October, surreally quiet.</div></div></div>
+    <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Bal Mithai</div><div class="panel-item-why">Kumaon's signature sweet — roasted khoya in white sugar. Baba Misthan Bhandar on Mall Road.</div></div></div>
   </div>
 </div>
 
-<!-- Food -->
 <div class="food-section">
   <div class="food-header">Where to Eat</div>
   <div class="food-grid">
-    <div class="food-item">
-      <div class="food-name">Sakley's</div>
-      <div class="food-type">Lunch / Dinner</div>
-      <div class="food-note">Nainital's oldest restaurant. Continental + Indian. Go at noon.</div>
-    </div>
-    <div class="food-item">
-      <div class="food-name">Embassy Restaurant</div>
-      <div class="food-type">Dinner</div>
-      <div class="food-note">Old-school classic, reliable North Indian.</div>
-    </div>
-    <div class="food-item">
-      <div class="food-name">Café Capri</div>
-      <div class="food-type">Dinner</div>
-      <div class="food-note">Lake-view balcony. Best for a romantic dinner night.</div>
-    </div>
-    <div class="food-item">
-      <div class="food-name">Machan Rooftop</div>
-      <div class="food-type">Lunch</div>
-      <div class="food-note">Good thalis, relaxed, nice views.</div>
-    </div>
-    <div class="food-item">
-      <div class="food-name">Hot Breads</div>
-      <div class="food-type">Breakfast</div>
-      <div class="food-note">Pastries, coffee, sandwiches. Mall Road.</div>
-    </div>
-    <div class="food-item">
-      <div class="food-name">Mall Road street food</div>
-      <div class="food-type">Snacks</div>
-      <div class="food-note">Roasted corn, gol gappa, hot momos, chai. Evening ritual.</div>
-    </div>
+    <div class="food-item"><div class="food-name">Sakley's</div><div class="food-type">Lunch / Dinner</div><div class="food-note">Nainital's oldest. Go at 11 AM to beat queue.</div></div>
+    <div class="food-item"><div class="food-name">Embassy Restaurant</div><div class="food-type">Dinner</div><div class="food-note">Old-school classic, reliable North Indian.</div></div>
+    <div class="food-item"><div class="food-name">Café Capri</div><div class="food-type">Dinner</div><div class="food-note">Lake-view balcony. Best romantic dinner.</div></div>
+    <div class="food-item"><div class="food-name">Machan Rooftop</div><div class="food-type">Lunch</div><div class="food-note">Good thalis, nice views, relaxed vibe.</div></div>
+    <div class="food-item"><div class="food-name">Sher-e-Punjab</div><div class="food-type">Dinner</div><div class="food-note">Hearty Punjabi near Mall Road.</div></div>
+    <div class="food-item"><div class="food-name">Hot Breads</div><div class="food-type">Breakfast</div><div class="food-note">Pastries + coffee. Mall Road.</div></div>
   </div>
 </div>
 
-<!-- Pack reminder -->
 <div class="reminder">
   <div class="reminder-head">Pack for October Nainital</div>
   <div class="reminder-list">
     <div class="reminder-item">Light jacket or fleece — evenings drop to 10–14°C</div>
-    <div class="reminder-item">Compact rain jacket — light showers possible in early October; folds into a day bag pocket</div>
-    <div class="reminder-item">Comfortable walking shoes — Tiffin Top and temple steps need grip</div>
-    <div class="reminder-item">Cash — many small shops and dhabas don't take UPI reliably in the hills</div>
-    <div class="reminder-item">Power bank — cold weather drains phone batteries fast</div>
-    <div class="reminder-item">Sunscreen — high altitude UV is strong even in October</div>
+    <div class="reminder-item">Compact rain jacket — light showers possible; folds into a day bag pocket</div>
+    <div class="reminder-item">Comfortable walking shoes — temple steps and Tiffin Top need grip</div>
+    <div class="reminder-item">Cash — many hill dhabas don't take UPI reliably</div>
+    <div class="reminder-item">Power bank — cold drains phone batteries fast</div>
+    <div class="reminder-item">Sunscreen — high-altitude UV is strong even in October</div>
   </div>
 </div>
 
 <script>
-(function() {
-  const stored = localStorage.getItem('nainital-theme');
-  if (stored) document.documentElement.dataset.theme = stored;
-  function updateBtn(theme) {
-    const btn = document.getElementById('themeBtn');
-    if (btn) btn.textContent = theme === 'dark' ? '☀ Light' : '☾ Dark';
+// ── Data ──────────────────────────────────────────────────────────────────────
+const D = [
+  {
+    date:'Friday, 10 October — Arrival', theme:'Lake, Town & the Cable Car', base:420,
+    slots:[
+      {t:420, tp:'w', tx:'Wake up · check in · freshen up'},
+      {t:460, tp:'f', tx:'Breakfast at Hot Breads, Mall Road · pastries + coffee · 30 min'},
+      {t:540, tp:'a', tx:'Naini Lake — boat ride · shikara or paddle ₹80–120 · 1 hr · best morning light'},
+      {t:605, tp:'v', tx:'Nanda Devi Temple · 5 min walk from dock · one of 64 Shakti Peethas · 40 min darshan'},
+      {t:650, tp:'a', tx:'Walk to Sakley\'s · 10 min · go early to beat the lunch queue'},
+      {t:660, tp:'f', tx:'Lunch at Sakley\'s · Nainital\'s oldest, since 1950s · ~1.5 hrs'},
+      {t:750, tp:'a', tx:'Tibetan Market + Mall Road browse · shawls, local honey, jam · 1.5 hrs'},
+      {t:870, tp:'w', tx:'Back at hotel · 1 hr break · charge devices before cable car'},
+      {t:930, tp:'r', tx:'Walk to Snow View cable car base, Mallital · 10 min'},
+      {t:940, tp:'v', tx:'Snow View Point · ₹270 RT · 2270m · Nanda Devi peak views · golden hour till 5:50 PM · bring jacket'},
+      {t:1065,tp:'b', tx:'Last cable car down · 5 min ride · back on Mall Road by 5:55 PM'},
+      {t:1170,tp:'f', tx:'Dinner — Café Capri (lake-view balcony) or Embassy · both on Mall Road'},
+    ]
+  },
+  {
+    date:'Saturday, 11 October', theme:'East Run + Northwest Loop', base:345,
+    slots:[
+      {t:345, tp:'w', tx:'Wake up · quick hotel breakfast · ready by 6:00 AM sharp'},
+      {t:360, tp:'r', tx:'Leave for Kainchi Dham · 17 km east · 30 min scooty', wa:375, wt:'Leaving late — may miss morning aarti at 6:45 AM!'},
+      {t:390, tp:'v', tx:'Arrive Kainchi Dham · aarti at 6:45 AM (fixed) · Neem Karoli Baba ashram · ~1.5 hrs'},
+      {t:495, tp:'r', tx:'Leave for Golu Devta, Bhowali · 7 km further east · 15 min'},
+      {t:510, tp:'v', tx:'Arrive Golu Devta Temple, Bhowali · temple of thousand bells + handwritten letters · 45 min'},
+      {t:555, tp:'r', tx:'Leave for Nainital · 24 km west · 20 min'},
+      {t:575, tp:'b', tx:'Back in Nainital · 25 min freshen up before Tiffin Top'},
+      {t:600, tp:'r', tx:'Leave for Tiffin Top base · 10 min scooty northwest'},
+      {t:610, tp:'v', tx:'Arrive Tiffin Top · horse ride ₹350–500 or free trek · 4 km round trip · 360° valley + snow peak views · 2.5 hrs'},
+      {t:760, tp:'r', tx:'Leave Tiffin Top · 15 min walk / scooty back to town'},
+      {t:780, tp:'f', tx:'Lunch at Machan Rooftop · lake view, good thalis · 1 hr'},
+      {t:855, tp:'r', tx:'Leave for Hanuman Garhi · 3 km northwest · 10 min'},
+      {t:865, tp:'v', tx:'Arrive Hanuman Garhi · hilltop temple · valley views · 45 min'},
+      {t:910, tp:'r', tx:'5 min scooty to Gurney House'},
+      {t:915, tp:'v', tx:'Arrive Gurney House · Jim Corbett\'s former home · colonial architecture · great couple photo · 30 min'},
+      {t:945, tp:'r', tx:'Leave for Pangot · 15 km northwest · 25 min'},
+      {t:970, tp:'v', tx:'Arrive Pangot forest road · oak + rhododendron forest · 150+ birds · slow ride, stop for photos · golden hour'},
+      {t:1050,tp:'r', tx:'Head back from Pangot · 15 km · 25 min · sunset at 5:50 PM'},
+      {t:1075,tp:'b', tx:'Back in Nainital'},
+      {t:1200,tp:'f', tx:'Dinner — Sher-e-Punjab (Punjabi) or Zooby\'s Kitchen · near Mall Road'},
+    ]
+  },
+  {
+    date:'Sunday, 12 October — Last Day', theme:'East Lakes + Mall Road Farewell', base:480,
+    slots:[
+      {t:480, tp:'w', tx:'Wake up · check out or leave luggage · quick breakfast at Hot Breads'},
+      {t:540, tp:'r', tx:'Leave for Bhimtal · 22 km east · 40 min scooty'},
+      {t:580, tp:'v', tx:'Arrive Bhimtal · larger than Naini Lake, far quieter · boating ₹100 · island aquarium mid-lake · 1.5 hrs'},
+      {t:675, tp:'r', tx:'Leave for Naukuchiatal · 7 km · 15 min'},
+      {t:690, tp:'v', tx:'Arrive Naukuchiatal · nine-cornered lake · almost no tourists · completely serene · 1 hr'},
+      {t:750, tp:'r', tx:'Leave for Bhowali lunch dhabas · 15 km · 25 min'},
+      {t:780, tp:'f', tx:'Lunch — Bhowali road dhabas · alu ke gutke + bhatt ki dal · 1 hr'},
+      {t:860, tp:'r', tx:'Leave for Mall Road, Nainital · 10 km · 20 min'},
+      {t:880, tp:'v', tx:'Arrive Mall Road · park scooty at Tallital lot (₹20/hr) · walk the road'},
+      {t:880, tp:'a', tx:'Last round on Mall Road · final shopping, chai + pakoras lakeside, photos · pick up Bal Mithai, Kumaoni honey, rhododendron jam'},
+      {t:1050,tp:'b', tx:'Return scooty · pack bags · early dinner by 6:30 PM'},
+      {t:1110,tp:'f', tx:'Early dinner before the drive · Sher-e-Punjab or Mall Road bites'},
+      {t:1170,tp:'r', tx:'Depart Nainital for Gurugram · ~7 hrs drive · arrive ~3–4 AM'},
+    ]
   }
-  const init = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  updateBtn(init);
-  window.toggleTheme = function() {
-    const curr = document.documentElement.dataset.theme ||
-      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    const next = curr === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    localStorage.setItem('nainital-theme', next);
-    updateBtn(next);
-    document.querySelector('meta[name="theme-color"][media*="dark"]')
-      ?.setAttribute('content', next === 'dark' ? '#1c3829' : '#f5f3ee');
+];
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+const TL = {w:'Wake',r:'Ride →',v:'→ Arrive',f:'Food',b:'↩ Back',a:'At'};
+const TC = {w:'sw',  r:'sr',    v:'sa',       f:'sf',  b:'sb',   a:'sat'};
+
+let cur = 0;
+
+function ft(m) {
+  m = ((m % 1440) + 1440) % 1440;
+  const h = Math.floor(m/60), mn = m%60;
+  return `${h%12||12}:${String(mn).padStart(2,'0')} ${h>=12?'PM':'AM'}`;
+}
+function getOff(i) {
+  const s = localStorage.getItem('nt-s'+i);
+  if (!s) return 0;
+  const [h,m] = s.split(':').map(Number);
+  return h*60+m - D[i].base;
+}
+function fmtOff(o) {
+  if (!o) return '';
+  const a=Math.abs(o), h=Math.floor(a/60), m=a%60;
+  return (o>0?'+':'−')+(h?h+'h ':'')+( (h&&m)||(!h&&m) ? m+'m' : '')+(o>0?' later':' earlier');
+}
+function isDone(di,si) { return localStorage.getItem(`nt-d${di}-${si}`)===  '1'; }
+function toggleDone(di,si,e) {
+  e && e.stopPropagation();
+  localStorage.setItem(`nt-d${di}-${si}`, isDone(di,si)?'0':'1');
+  render();
+}
+function showDay(i) {
+  cur=i;
+  for(let j=0;j<3;j++) document.getElementById('t'+j).classList.toggle('active',j===i);
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function setStart(i,v) {
+  v ? localStorage.setItem('nt-s'+i,v) : localStorage.removeItem('nt-s'+i);
+  render();
+}
+function resetStart(i) {
+  localStorage.removeItem('nt-s'+i);
+  const inp=document.getElementById('ni');
+  if(inp){const d=D[i]; inp.value=`${String(Math.floor(d.base/60)).padStart(2,'0')}:${String(d.base%60).padStart(2,'0')}`;}
+  render();
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function render() {
+  const d=D[cur], off=getOff(cur);
+  const sm=((d.base+off)%1440+1440)%1440;
+  const sv=`${String(Math.floor(sm/60)).padStart(2,'0')}:${String(sm%60).padStart(2,'0')}`;
+
+  let h=`<div class="day">
+<div class="day-header">
+  <div class="day-num">${String(cur+1).padStart(2,'0')}</div>
+  <div class="day-info">
+    <div class="day-date">${d.date}</div>
+    <div class="day-theme">${d.theme}</div>
+  </div>
+</div>
+<div class="start-row">
+  <label>Starts at</label>
+  <input type="time" id="ni" class="start-inp" value="${sv}" onchange="setStart(${cur},this.value)">
+  ${off
+    ? `<span class="start-delta">${fmtOff(off)}</span><button class="start-reset" onclick="resetStart(${cur})">reset</button>`
+    : `<span class="start-hint">adjust if you start later / earlier</span>`}
+</div>
+<div class="slots">`;
+
+  d.slots.forEach((s,si)=>{
+    const tm=s.t+off, done=isDone(cur,si), warn=s.wa && tm>s.wa;
+    h+=`<div class="slot${done?' done':''}" onclick="toggleDone(${cur},${si},event)">
+  <div class="slot-time">${ft(tm)}</div>
+  <div class="slot-body">
+    <div class="slot-name"><span class="stype ${TC[s.tp]}">${TL[s.tp]}</span>${s.tx}</div>
+    ${warn?`<div class="slot-warn">⚠ ${s.wt}</div>`:''}
+  </div>
+  <div class="slot-check">${done?'✓':'○'}</div>
+</div>`;
+  });
+
+  h+=`</div></div>`;
+  document.getElementById('day-view').innerHTML=h;
+}
+
+// ── Theme ─────────────────────────────────────────────────────────────────────
+(function(){
+  const s=localStorage.getItem('nt-theme');
+  if(s) document.documentElement.dataset.theme=s;
+  function upd(t){const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀':'☾';}
+  upd(s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+  window.toggleTheme=function(){
+    const c=document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    const n=c==='dark'?'light':'dark';
+    document.documentElement.dataset.theme=n;
+    localStorage.setItem('nt-theme',n);
+    upd(n);
   };
 })();
-</script>
 
+// ── Boot ──────────────────────────────────────────────────────────────────────
+// Auto-select current day based on real date
+(function(){
+  const now=new Date();
+  const oct=new Date('2026-10-10');
+  const diff=Math.floor((now-oct)/(1000*60*60*24));
+  if(diff>=0 && diff<3) cur=diff;
+  for(let j=0;j<3;j++) document.getElementById('t'+j).classList.toggle('active',j===cur);
+})();
+render();
+</script>
