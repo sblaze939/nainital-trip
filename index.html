@@ -124,34 +124,46 @@ body{
 }
 .start-hint{font-size:.68rem;color:var(--muted);opacity:.65;}
 
-/* Slots */
-.slots{padding:4px 0;}
+/* Slots — card style */
+.slots{padding:10px 14px 16px;display:flex;flex-direction:column;gap:8px;background:var(--surface2);}
 .slot{
-  display:grid; grid-template-columns:78px 1fr 34px;
-  border-bottom:1px solid var(--border);
+  display:flex; align-items:stretch;
+  background:var(--surface); border-radius:12px; overflow:hidden;
   cursor:pointer; -webkit-tap-highlight-color:transparent;
-  transition:background .1s;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+  transition:opacity .12s;
 }
-.slot:last-child{border-bottom:none;}
-.slot:active{background:var(--surface2);}
+.slot:active{opacity:.75;}
+.slot-accent{width:4px;flex-shrink:0;align-self:stretch;}
+.slot-num{
+  width:28px;flex-shrink:0;padding:13px 0 13px 10px;
+  font-size:.6rem;font-weight:700;color:var(--muted);
+  font-variant-numeric:tabular-nums;display:flex;align-items:flex-start;
+}
+.slot-body{flex:1;padding:10px 8px 10px 10px;min-width:0;}
 .slot-time{
-  padding:12px 8px 12px 14px; font-size:.66rem; font-weight:600;
-  letter-spacing:.02em; color:var(--muted); text-transform:uppercase;
-  border-right:1px solid var(--border);
-  display:flex; align-items:flex-start; padding-top:14px;
-  font-variant-numeric:tabular-nums;
+  font-size:.63rem;font-weight:600;letter-spacing:.04em;
+  color:var(--muted);text-transform:uppercase;font-variant-numeric:tabular-nums;
+  margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
 }
-.slot-body{padding:10px 10px 10px 12px;}
-.slot-name{font-weight:500;color:var(--txt);font-size:.82rem;line-height:1.45;}
-.slot-warn{font-size:.68rem;font-weight:600;color:#d05a38;margin-top:4px;}
-.slot-check{
-  display:flex; align-items:flex-start; justify-content:center;
-  padding-top:13px; font-size:.9rem; color:var(--border);
-  user-select:none; border-left:1px solid var(--border);
+.slot-name{font-weight:500;color:var(--txt);font-size:.83rem;line-height:1.42;}
+.slot-warn{font-size:.68rem;font-weight:600;color:#d05a38;margin-top:5px;}
+.slot-check-btn{
+  width:44px;flex-shrink:0;display:flex;
+  align-items:flex-start;justify-content:center;
+  padding-top:10px;user-select:none;
 }
-.slot.done .slot-check{color:var(--lake);}
-.slot.done .slot-time{opacity:.32;}
-.slot.done .slot-name{opacity:.32;text-decoration:line-through;}
+.check-circle{
+  width:24px;height:24px;border-radius:50%;
+  border:2px solid var(--border);display:flex;
+  align-items:center;justify-content:center;
+  font-size:.72rem;color:transparent;flex-shrink:0;
+  transition:background .15s,border-color .15s;
+}
+.slot.done .check-circle{background:#3aaa64;border-color:#3aaa64;color:#fff;}
+.slot.done .slot-name{opacity:.36;text-decoration:line-through;}
+.slot.done .slot-time{opacity:.36;}
+.slot.done .slot-num{opacity:.36;}
 
 /* Type pills */
 .stype{
@@ -337,6 +349,7 @@ const D = [
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const TL = {w:'Wake',r:'Ride →',v:'→ Arrive',f:'Food',b:'↩ Back',a:'At'};
 const TC = {w:'sw',  r:'sr',    v:'sa',       f:'sf',  b:'sb',   a:'sat'};
+const AC = {w:'var(--muted)',r:'var(--gold)',v:'var(--lake)',f:'#9b72cc',b:'#3a7a52',a:'var(--pine)'};
 
 let cur = 0;
 
@@ -405,12 +418,14 @@ function render() {
   d.slots.forEach((s,si)=>{
     const tm=s.t+off, done=isDone(cur,si), warn=s.wa && tm>s.wa;
     h+=`<div class="slot${done?' done':''}" onclick="toggleDone(${cur},${si},event)">
-  <div class="slot-time">${ft(tm)}</div>
+  <div class="slot-accent" style="background:${AC[s.tp]}"></div>
+  <div class="slot-num">${String(si+1).padStart(2,'0')}</div>
   <div class="slot-body">
-    <div class="slot-name"><span class="stype ${TC[s.tp]}">${TL[s.tp]}</span>${s.tx}</div>
+    <div class="slot-time">${ft(tm)}<span class="stype ${TC[s.tp]}">${TL[s.tp]}</span></div>
+    <div class="slot-name">${s.tx}</div>
     ${warn?`<div class="slot-warn">⚠ ${s.wt}</div>`:''}
   </div>
-  <div class="slot-check">${done?'✓':'○'}</div>
+  <div class="slot-check-btn"><div class="check-circle">${done?'✓':''}</div></div>
 </div>`;
   });
 
