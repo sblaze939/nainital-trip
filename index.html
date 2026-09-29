@@ -1,0 +1,798 @@
+<title>Nainital Oct 2026</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nainital">
+<meta name="theme-color" content="#1c3829" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #f5f3ee;
+    --surface: #ffffff;
+    --surface2: #eef0eb;
+    --pine: #1c3829;
+    --lake: #2e7fa6;
+    --gold: #c9753a;
+    --mist: #ddeaf1;
+    --txt: #242820;
+    --muted: #6b7a70;
+    --border: #dcddd7;
+    --skip-bg: #fdf2ec;
+    --skip-border: #e8b48a;
+    --gem-bg: #eef5f0;
+    --gem-border: #86b898;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151a14;
+      --surface: #1e2419;
+      --surface2: #252b20;
+      --pine: #8db89e;
+      --lake: #6ab5d4;
+      --gold: #d98c52;
+      --mist: #1e2e38;
+      --txt: #e8ebe3;
+      --muted: #8a9a88;
+      --border: #2e3628;
+      --skip-bg: #2a1e15;
+      --skip-border: #8a5030;
+      --gem-bg: #162018;
+      --gem-border: #3d6b4a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151a14;
+    --surface: #1e2419;
+    --surface2: #252b20;
+    --pine: #8db89e;
+    --lake: #6ab5d4;
+    --gold: #d98c52;
+    --mist: #1e2e38;
+    --txt: #e8ebe3;
+    --muted: #8a9a88;
+    --border: #2e3628;
+    --skip-bg: #2a1e15;
+    --skip-border: #8a5030;
+    --gem-bg: #162018;
+    --gem-border: #3d6b4a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--txt);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-inline: 20px;
+    padding-block: 32px 48px;
+    max-width: 780px;
+    margin-inline: auto;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 36px;
+  }
+  .header-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .header-title {
+    font-family: 'Cormorant Garant', Georgia, serif;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    font-weight: 700;
+    color: var(--pine);
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  .header-meta {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .meta-chip {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+  .meta-chip strong { color: var(--txt); font-weight: 600; }
+
+  /* Travel note */
+  .travel-note {
+    background: var(--mist);
+    border-left: 3px solid var(--lake);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 32px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .travel-note strong { color: var(--lake); }
+
+  /* Day block */
+  .day {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .day-num {
+    font-family: 'Cormorant Garant', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--pine);
+    line-height: 1;
+  }
+  .day-info { flex: 1; }
+  .day-date {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .day-theme {
+    font-family: 'Cormorant Garant', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--txt);
+    line-height: 1.2;
+  }
+
+  /* Time blocks */
+  .slots { padding: 4px 0; }
+  .slot {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .slot:last-child { border-bottom: none; }
+  .slot-time {
+    padding: 12px 16px 12px 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 14px;
+  }
+  .slot-body {
+    padding: 12px 20px;
+  }
+  .slot-name {
+    font-weight: 600;
+    color: var(--txt);
+    font-size: 0.88rem;
+    line-height: 1.3;
+  }
+  .slot-note {
+    font-size: 0.76rem;
+    color: var(--muted);
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+  .slot-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .tag {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .tag-photo { background: rgba(46,127,166,0.12); color: var(--lake); }
+  .tag-food { background: rgba(201,117,58,0.12); color: var(--gold); }
+  .tag-spiritual { background: rgba(134,184,152,0.15); color: #4a8a5e; }
+  .tag-relax { background: rgba(107,122,112,0.12); color: var(--muted); }
+  .tag-drive { background: rgba(28,56,41,0.1); color: var(--pine); }
+  .tag-shopping { background: rgba(180,150,210,0.15); color: #7a52a0; }
+
+  /* Two-column panels */
+  .panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 520px) { .panels { grid-template-columns: 1fr; } }
+
+  .panel {
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .panel-skip {
+    background: var(--skip-bg);
+    border: 1px solid var(--skip-border);
+  }
+  .panel-gem {
+    background: var(--gem-bg);
+    border: 1px solid var(--gem-border);
+  }
+  .panel-head {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .panel-skip .panel-head { color: #b06030; }
+  .panel-gem .panel-head { color: #3a7a52; }
+
+  .panel-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  .panel-item:last-child { margin-bottom: 0; }
+  .panel-icon { flex-shrink: 0; margin-top: 1px; font-style: normal; }
+  .panel-item-body {}
+  .panel-item-name { font-weight: 600; color: var(--txt); }
+  .panel-item-why { color: var(--muted); font-size: 0.74rem; }
+
+  /* Food section */
+  .food-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .food-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0;
+  }
+  .food-item {
+    padding: 12px 16px 12px 20px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .food-item:nth-child(n):last-child,
+  .food-item:nth-last-child(-n+2) { border-bottom: none; }
+  .food-name { font-weight: 600; font-size: 0.84rem; color: var(--txt); }
+  .food-type { font-size: 0.72rem; color: var(--gold); font-weight: 500; }
+  .food-note { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+  /* Documents reminder */
+  .reminder {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 0.8rem;
+  }
+  .reminder-head {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .reminder-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .reminder-item {
+    display: flex;
+    gap: 8px;
+    color: var(--muted);
+    align-items: flex-start;
+  }
+  .reminder-item::before {
+    content: '·';
+    flex-shrink: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  /* Scooty panel */
+  .scooty-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .scooty-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .scooty-header-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .scooty-header-pill {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(201,117,58,0.12);
+    color: var(--gold);
+    border-radius: 10px;
+    padding: 2px 8px;
+  }
+  .scooty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  }
+  .scooty-cell {
+    padding: 12px 16px 12px 20px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+  .scooty-cell:last-child { border-right: none; }
+  .scooty-cell-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .scooty-cell-val { font-weight: 600; color: var(--txt); }
+  .scooty-cell-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+  .scooty-note {
+    padding: 10px 20px;
+    font-size: 0.76rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+    line-height: 1.5;
+  }
+  .scooty-note strong { color: var(--txt); }
+
+  /* Theme toggle */
+  .theme-toggle {
+    position: fixed;
+    top: max(14px, env(safe-area-inset-top, 14px));
+    right: 16px;
+    z-index: 100;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    letter-spacing: 0.03em;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .theme-toggle:hover { color: var(--txt); }
+
+  /* Timeline type pills */
+  .stype {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 1px 6px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .stype-wake   { background: rgba(107,122,112,0.12); color: var(--muted); }
+  .stype-ride   { background: rgba(201,117,58,0.14);  color: var(--gold); }
+  .stype-arrive { background: rgba(46,127,166,0.14);  color: var(--lake); }
+  .stype-food   { background: rgba(180,150,210,0.16); color: #7a52a0; }
+  .stype-back   { background: rgba(134,184,152,0.18); color: #3a7a52; }
+  .stype-at     { background: rgba(28,56,41,0.1);     color: var(--pine); }
+
+</style>
+
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">☀ Light</button>
+
+<div class="header">
+  <div class="header-eyebrow">Couple's Trip</div>
+  <div class="header-title">Nainital, October 2026</div>
+  <div class="header-meta">
+    <span class="meta-chip">Leave Gurugram <strong>9 Oct night</strong></span>
+    <span class="meta-chip">Arrive Nainital <strong>10 Oct, 7–8 AM</strong></span>
+    <span class="meta-chip">Depart <strong>12 Oct night</strong></span>
+    <span class="meta-chip"><strong>3 full days</strong></span>
+  </div>
+</div>
+
+<!-- DAY 1 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">01</div>
+    <div class="day-info">
+      <div class="day-date">Friday, 10 October — Arrival</div>
+      <div class="day-theme">Lake, Town &amp; the Cable Car</div>
+    </div>
+  </div>
+  <div class="slots">
+    <div class="slot">
+      <div class="slot-time">7:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Wake</span>Wake up · check in · freshen up</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">7:40 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Food</span>Breakfast at Hot Breads, Mall Road · pastries + coffee · 30 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">9:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Naini Lake — boat ride · shikara or paddle boat ₹80–120 · 1 hr · best morning light before the rush</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">10:05 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Nanda Devi Temple (Maa Naina Devi) · 5 min walk from dock · one of 64 Shakti Peethas · 40 min darshan</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">10:50 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Walk to Sakley's · 10 min · go by 11 AM to beat the lunch queue</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">11:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Lunch</span>Sakley's Restaurant · Nainital's oldest, since 1950s · Continental + Indian · ~1.5 hrs</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">12:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Tibetan Market + Mall Road browse · woollen shawls, local honey, jam · 1.5 hrs walkable stretch</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">2:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Rest</span>Back at hotel · 1 hr break · charge devices · rest before cable car</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">3:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Walk →</span>Walk to Snow View cable car base, Mallital · 10 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">3:40 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Snow View Point · cable car ₹270 RT · 2270m · Nanda Devi peak views · golden hour till 5:50 PM · carry jacket</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">5:45 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Last cable car down · 5 min ride · back on Mall Road by 5:55 PM</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">7:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Dinner</span>Café Capri (lake-view balcony) or Embassy (old-school classic) · both on Mall Road</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 2 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">02</div>
+    <div class="day-info">
+      <div class="day-date">Saturday, 11 October — Full Day</div>
+      <div class="day-theme">Ashram at Dawn, Hilltops &amp; Temples</div>
+    </div>
+  </div>
+  <div class="slots">
+    <div class="slot">
+      <div class="slot-time">5:45 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Wake</span>Wake up · quick hotel breakfast · ready by 6:00 AM sharp</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">6:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Kainchi Dham · 17 km east · 30 min scooty</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">6:30 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Kainchi Dham · aarti starts 6:45 AM · Neem Karoli Baba's ashram, cedar gorge setting · spend 1.5 hrs</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">8:15 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Golu Devta, Bhowali · 7 km further east · 15 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">8:30 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Golu Devta Temple, Bhowali · temple of thousand bells + handwritten letters · very photogenic · 45 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">9:15 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Nainital · 24 km west · 20 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">9:35 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Back in Nainital · 25 min freshen up before Tiffin Top</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">10:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Tiffin Top base · 10 min scooty northwest</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">10:10 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Tiffin Top · horse ride ₹350–500 or free trek · 4 km round trip · 360° valley + snow peak views · 2.5 hrs</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">12:40 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave Tiffin Top for town · 15 min walk/scooty back</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">1:00 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Lunch</span>Machan Rooftop Restaurant · lake view, good thalis · 1 hr</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">2:15 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Hanuman Garhi · 3 km northwest · 10 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">2:25 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Hanuman Garhi · hilltop temple, quiet, good valley views · 45 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">3:10 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>5 min to Gurney House</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">3:15 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Gurney House · Jim Corbett's former home · colonial architecture · great couple photo · 30 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">3:45 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Pangot · 15 km northwest · 25 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">4:10 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Pangot forest road · oak + rhododendron forest · slow ride, stop for photos · golden hour before sunset at 5:50 PM</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">5:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Head back from Pangot · 15 km · 25 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">5:55 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Back in Nainital</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">8:00 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Dinner</span>Sher-e-Punjab (Punjabi) or Zooby's Kitchen (lighter café food) · both near Mall Road</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 3 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">03</div>
+    <div class="day-info">
+      <div class="day-date">Sunday, 12 October — Last Day</div>
+      <div class="day-theme">The Lakes, Then Home</div>
+    </div>
+  </div>
+  <div class="slots">
+    <div class="slot">
+      <div class="slot-time">8:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-wake">Wake</span>Wake up · check out or leave luggage · quick breakfast at Hot Breads</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">9:00 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Bhimtal · 22 km east · 40 min scooty</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">9:40 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Bhimtal · larger than Naini Lake, far quieter · boating ₹100, island aquarium mid-lake · spend 1.5 hrs</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">11:15 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Naukuchiatal · 7 km · 15 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">11:30 AM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Naukuchiatal · nine-cornered lake · almost no tourists · completely serene · spend 1 hr</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">12:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Bhowali lunch dhabas · 15 km · 25 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">1:00 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Lunch</span>Bhowali road dhabas · alu ke gutke + bhatt ki dal · 1 hr</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">2:20 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Ride →</span>Leave for Mall Road, Nainital · 10 km · 20 min</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">2:40 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-arrive">→ Arrive</span>Mall Road, Nainital · park scooty at Tallital lot (₹20/hr) · walk the road</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">2:40–5 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-at">At</span>Last round on Mall Road · final shopping, chai + pakoras lakeside, photos · pick up Bal Mithai, Kumaoni honey, rhododendron jam</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">5:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-back">↩ Back</span>Return scooty · pack bags · early dinner by 6:30 PM</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">6:30 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-food">Dinner</span>Early dinner before the long drive · Sher-e-Punjab or Mall Road bites</div></div>
+    </div>
+    <div class="slot">
+      <div class="slot-time">7:30–8 PM</div>
+      <div class="slot-body"><div class="slot-name"><span class="stype stype-ride">Drive →</span>Depart Nainital for Gurugram · ~7 hrs · stock up on water + snacks · arrive ~3–4 AM</div></div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- Skip / Gems -->
+<div class="panels">
+  <div class="panel panel-skip">
+    <div class="panel-head">Skip These</div>
+    <div class="panel-item">
+      <span class="panel-icon">✕</span>
+      <div class="panel-item-body">
+        <div class="panel-item-name">Naina Zoo (High Altitude Zoo)</div>
+        <div class="panel-item-why">Average zoo, nothing special at this altitude. Not worth 2 hours of your time.</div>
+      </div>
+    </div>
+    <div class="panel-item">
+      <span class="panel-icon">✕</span>
+      <div class="panel-item-body">
+        <div class="panel-item-name">Eco Cave Garden</div>
+        <div class="panel-item-why">Commercial, basic artificial caves. Tourist trap. The ₹75 entry isn't worth it.</div>
+      </div>
+    </div>
+    <div class="panel-item">
+      <span class="panel-icon">✕</span>
+      <div class="panel-item-body">
+        <div class="panel-item-name">Naina Peak (China Peak)</div>
+        <div class="panel-item-why">12 km round trip serious trek, 4–5 hours. Snow View Point gives near-identical views in 1/5th the effort by cable car. Skip unless you're avid trekkers.</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-gem">
+    <div class="panel-head">Hidden Gems</div>
+    <div class="panel-item">
+      <span class="panel-icon">◆</span>
+      <div class="panel-item-body">
+        <div class="panel-item-name">Naukuchiatal</div>
+        <div class="panel-item-why">Nine-cornered lake, 30 km from Nainital. Almost zero tourists. Surreally quiet for a Sunday.</div>
+      </div>
+    </div>
+    <div class="panel-item">
+      <span class="panel-icon">◆</span>
+      <div class="panel-item-body">
+        <div class="panel-item-name">Ramgarh Village</div>
+        <div class="panel-item-why">25 km from Nainital. "Fruit Bowl of Kumaon" — apple orchards mid-October, orchard views, almost no footfall. Great if you have a spare half-day.</div>
+      </div>
+    </div>
+    <div class="panel-item">
+      <span class="panel-icon">◆</span>
+      <div class="panel-item-body">
+        <div class="panel-item-name">Bal Mithai</div>
+        <div class="panel-item-why">Uttarakhand's signature sweet — roasted khoya coated in white sugar balls. Baba Misthan Bhandar on Mall Road makes the best. Buy a 500g box to take home.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Food -->
+<div class="food-section">
+  <div class="food-header">Where to Eat</div>
+  <div class="food-grid">
+    <div class="food-item">
+      <div class="food-name">Sakley's</div>
+      <div class="food-type">Lunch / Dinner</div>
+      <div class="food-note">Nainital's oldest restaurant. Continental + Indian. Go at noon.</div>
+    </div>
+    <div class="food-item">
+      <div class="food-name">Embassy Restaurant</div>
+      <div class="food-type">Dinner</div>
+      <div class="food-note">Old-school classic, reliable North Indian.</div>
+    </div>
+    <div class="food-item">
+      <div class="food-name">Café Capri</div>
+      <div class="food-type">Dinner</div>
+      <div class="food-note">Lake-view balcony. Best for a romantic dinner night.</div>
+    </div>
+    <div class="food-item">
+      <div class="food-name">Machan Rooftop</div>
+      <div class="food-type">Lunch</div>
+      <div class="food-note">Good thalis, relaxed, nice views.</div>
+    </div>
+    <div class="food-item">
+      <div class="food-name">Hot Breads</div>
+      <div class="food-type">Breakfast</div>
+      <div class="food-note">Pastries, coffee, sandwiches. Mall Road.</div>
+    </div>
+    <div class="food-item">
+      <div class="food-name">Mall Road street food</div>
+      <div class="food-type">Snacks</div>
+      <div class="food-note">Roasted corn, gol gappa, hot momos, chai. Evening ritual.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Pack reminder -->
+<div class="reminder">
+  <div class="reminder-head">Pack for October Nainital</div>
+  <div class="reminder-list">
+    <div class="reminder-item">Light jacket or fleece — evenings drop to 10–14°C</div>
+    <div class="reminder-item">Compact rain jacket — light showers possible in early October; folds into a day bag pocket</div>
+    <div class="reminder-item">Comfortable walking shoes — Tiffin Top and temple steps need grip</div>
+    <div class="reminder-item">Cash — many small shops and dhabas don't take UPI reliably in the hills</div>
+    <div class="reminder-item">Power bank — cold weather drains phone batteries fast</div>
+    <div class="reminder-item">Sunscreen — high altitude UV is strong even in October</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const stored = localStorage.getItem('nainital-theme');
+  if (stored) document.documentElement.dataset.theme = stored;
+  function updateBtn(theme) {
+    const btn = document.getElementById('themeBtn');
+    if (btn) btn.textContent = theme === 'dark' ? '☀ Light' : '☾ Dark';
+  }
+  const init = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  updateBtn(init);
+  window.toggleTheme = function() {
+    const curr = document.documentElement.dataset.theme ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = curr === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('nainital-theme', next);
+    updateBtn(next);
+    document.querySelector('meta[name="theme-color"][media*="dark"]')
+      ?.setAttribute('content', next === 'dark' ? '#1c3829' : '#f5f3ee');
+  };
+})();
+</script>
+
