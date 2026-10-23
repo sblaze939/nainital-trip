@@ -215,9 +215,9 @@ hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
   <div class="header-eyebrow">Couple's Trip</div>
   <div class="header-title">Nainital, October 2026</div>
   <div class="header-meta">
-    <span class="meta-chip">Leave Gurugram <strong>9 Oct night</strong></span>
-    <span class="meta-chip">Arrive <strong>10 Oct, 7–8 AM</strong></span>
-    <span class="meta-chip">Depart <strong>12 Oct night</strong></span>
+    <span class="meta-chip">Leave Gurugram <strong>22 Oct, 10–11 PM</strong></span>
+    <span class="meta-chip">Arrive <strong>23 Oct, 6–7 AM</strong></span>
+    <span class="meta-chip">Depart <strong>25 Oct night</strong></span>
     <span class="meta-chip"><strong>3 full days</strong></span>
   </div>
 </div>
@@ -225,15 +225,15 @@ hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
 <div class="day-tabs-bar">
   <button class="day-tab active" id="t0" onclick="showDay(0)">
     <span class="day-tab-num">01</span>
-    <span class="day-tab-sub">Fri 10 Oct</span>
+    <span class="day-tab-sub">Fri 23 Oct</span>
   </button>
   <button class="day-tab" id="t1" onclick="showDay(1)">
     <span class="day-tab-num">02</span>
-    <span class="day-tab-sub">Sat 11 Oct</span>
+    <span class="day-tab-sub">Sat 24 Oct</span>
   </button>
   <button class="day-tab" id="t2" onclick="showDay(2)">
     <span class="day-tab-num">03</span>
-    <span class="day-tab-sub">Sun 12 Oct</span>
+    <span class="day-tab-sub">Sun 25 Oct</span>
   </button>
   <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀</button>
 </div>
@@ -246,12 +246,11 @@ hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
   <div class="panel panel-skip">
     <div class="panel-head">Skip These</div>
     <div class="panel-item"><span class="panel-icon">✕</span><div><div class="panel-item-name">Naina Zoo (High Altitude Zoo)</div><div class="panel-item-why">Average zoo, nothing special. Not worth 2 hours.</div></div></div>
-    <div class="panel-item"><span class="panel-icon">✕</span><div><div class="panel-item-name">Eco Cave Garden</div><div class="panel-item-why">Commercial artificial caves. Tourist trap. Skip.</div></div></div>
     <div class="panel-item"><span class="panel-icon">✕</span><div><div class="panel-item-name">Naina Peak trek</div><div class="panel-item-why">12 km, 4–5 hrs. Snow View cable car gives same views in 1/5th the effort.</div></div></div>
   </div>
   <div class="panel panel-gem">
     <div class="panel-head">Hidden Gems</div>
-    <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Naukuchiatal</div><div class="panel-item-why">Nine-cornered lake, 30 km out. Almost zero tourists even on a Sunday.</div></div></div>
+    <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Naukuchiatal</div><div class="panel-item-why">Nine-cornered lake, 30 km out. Almost zero tourists even on a Saturday.</div></div></div>
     <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Ramgarh Village</div><div class="panel-item-why">25 km away — apple orchards in October, surreally quiet.</div></div></div>
     <div class="panel-item"><span class="panel-icon">◆</span><div><div class="panel-item-name">Bal Mithai</div><div class="panel-item-why">Kumaon's signature sweet — roasted khoya in white sugar. Baba Misthan Bhandar on Mall Road.</div></div></div>
   </div>
@@ -260,7 +259,7 @@ hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
 <div class="food-section">
   <div class="food-header">Where to Eat</div>
   <div class="food-grid">
-    <div class="food-item"><div class="food-name">Sakley's</div><div class="food-type">Lunch / Dinner</div><div class="food-note">Nainital's oldest. Go at 11 AM to beat queue.</div></div>
+    <div class="food-item"><div class="food-name">Sakley's</div><div class="food-type">Lunch / Dinner</div><div class="food-note">Nainital's oldest. Go by noon to beat the queue.</div></div>
     <div class="food-item"><div class="food-name">Embassy Restaurant</div><div class="food-type">Dinner</div><div class="food-note">Old-school classic, reliable North Indian.</div></div>
     <div class="food-item"><div class="food-name">Café Capri</div><div class="food-type">Dinner</div><div class="food-note">Lake-view balcony. Best romantic dinner.</div></div>
     <div class="food-item"><div class="food-name">Machan Rooftop</div><div class="food-type">Lunch</div><div class="food-note">Good thalis, nice views, relaxed vibe.</div></div>
@@ -285,34 +284,32 @@ hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
 // ── Data ──────────────────────────────────────────────────────────────────────
 const D = [
   {
-    date:'Friday, 10 October — Arrival', theme:'Lake, Town & the Cable Car', base:420,
+    date:'Friday, 23 October — Arrival Day', theme:'Rest, Lake & the Cable Car', base:660,
     slots:[
-      {t:420, tp:'w', tx:'Wake up · check in · freshen up'},
-      {t:460, tp:'f', tx:'Breakfast at Hot Breads, Mall Road · pastries + coffee · 30 min'},
-      {t:540, tp:'a', tx:'Naini Lake — boat ride · shikara or paddle ₹80–120 · 1 hr · best morning light'},
-      {t:605, tp:'v', tx:'Nanda Devi Temple · 5 min walk from dock · one of 64 Shakti Peethas · 40 min darshan'},
-      {t:650, tp:'a', tx:'Walk to Sakley\'s · 10 min · go early to beat the lunch queue'},
-      {t:660, tp:'f', tx:'Lunch at Sakley\'s · Nainital\'s oldest, since 1950s · ~1.5 hrs'},
-      {t:750, tp:'a', tx:'Tibetan Market + Mall Road browse · shawls, local honey, jam · 1.5 hrs'},
-      {t:870, tp:'w', tx:'Back at hotel · 1 hr break · charge devices before cable car'},
-      {t:930, tp:'r', tx:'Walk to Snow View cable car base, Mallital · 10 min'},
-      {t:940, tp:'v', tx:'Snow View Point · ₹270 RT · 2270m · Nanda Devi peak views · golden hour till 5:50 PM · bring jacket'},
-      {t:1065,tp:'b', tx:'Last cable car down · 5 min ride · back on Mall Road by 5:55 PM'},
-      {t:1170,tp:'f', tx:'Dinner — Café Capri (lake-view balcony) or Embassy · both on Mall Road'},
+      {t:660, tp:'w', tx:'Check in done · freshen up after overnight drive · rest until ready · no rush'},
+      {t:720, tp:'f', tx:'Lunch at Sakley\'s · Nainital\'s oldest, since 1950s · arrive by noon to beat queue · ~1.5 hrs'},
+      {t:810, tp:'a', tx:'Naini Lake — boat ride · shikara or paddle ₹80–120 · 1 hr · beautiful afternoon light'},
+      {t:870, tp:'v', tx:'Nanda Devi Temple · 5 min walk from dock · one of 64 Shakti Peethas · 35 min darshan'},
+      {t:915, tp:'r', tx:'Walk to Snow View cable car base, Mallital · 10 min — cable car closes ~5 PM, go now'},
+      {t:925, tp:'v', tx:'Snow View Point · ₹270 RT · 2270m · Nanda Devi peak views · golden hour light · bring jacket', wa:990, wt:'Cable car last ride ~5 PM — you may not make it back in time!'},
+      {t:1020,tp:'b', tx:'Last cable car down · 5 min ride · back at Mall Road by 5:10 PM'},
+      {t:1050,tp:'w', tx:'Hotel · freshen up · rest before evening out'},
+      {t:1140,tp:'a', tx:'Tibetan Market + Mall Road — night browse · shawls, local honey, jam · lively after 7 PM · 1.5 hrs'},
+      {t:1230,tp:'f', tx:'Dinner — Café Capri (lake-view balcony) or Embassy Restaurant · both on Mall Road'},
     ]
   },
   {
-    date:'Saturday, 11 October', theme:'East Run + Northwest Loop', base:345,
+    date:'Saturday, 24 October', theme:'East Run + Northwest Loop', base:345,
     slots:[
-      {t:345, tp:'w', tx:'Wake up · quick hotel breakfast · ready by 6:00 AM sharp'},
-      {t:360, tp:'r', tx:'Leave for Kainchi Dham · 17 km east · 30 min scooty', wa:375, wt:'Leaving late — may miss morning aarti at 6:45 AM!'},
-      {t:390, tp:'v', tx:'Arrive Kainchi Dham · aarti at 6:45 AM (fixed) · Neem Karoli Baba ashram · ~1.5 hrs'},
-      {t:495, tp:'r', tx:'Leave for Golu Devta, Bhowali · 7 km further east · 15 min'},
-      {t:510, tp:'v', tx:'Arrive Golu Devta Temple, Bhowali · temple of thousand bells + handwritten letters · 45 min'},
-      {t:555, tp:'r', tx:'Leave for Nainital · 24 km west · 20 min'},
-      {t:575, tp:'b', tx:'Back in Nainital · 25 min freshen up before Tiffin Top'},
-      {t:600, tp:'r', tx:'Leave for Tiffin Top base · 10 min scooty northwest'},
-      {t:610, tp:'v', tx:'Arrive Tiffin Top · horse ride ₹350–500 or free trek · 4 km round trip · 360° valley + snow peak views · 2.5 hrs'},
+      {t:345, tp:'w', tx:'Wake up · quick hotel breakfast · leave scooty at hotel today morning'},
+      {t:360, tp:'r', tx:'Shared taxi from Tallital stand → Kainchi Dham · Almora-bound jeeps pass right through · 17 km · ~35 min · ₹30–50 per person', wa:375, wt:'Leaving late — may miss morning aarti at 6:45 AM!'},
+      {t:395, tp:'v', tx:'Arrive Kainchi Dham · aarti at 6:45 AM (fixed) · Neem Karoli Baba ashram · ~1.5 hrs · scooties not allowed on approach road'},
+      {t:500, tp:'r', tx:'Shared jeep to Golu Devta, Ghodi Khal · 3 km further east · 10 min'},
+      {t:510, tp:'v', tx:'Arrive Golu Devta Temple · temple of thousand bells + handwritten letters · 45 min'},
+      {t:555, tp:'r', tx:'Shared jeep back to Nainital · ~35 min'},
+      {t:590, tp:'b', tx:'Back in Nainital · pick up scooty · quick freshen up'},
+      {t:620, tp:'r', tx:'Leave for Tiffin Top base · 10 min scooty northwest'},
+      {t:630, tp:'v', tx:'Arrive Tiffin Top · horse ride ₹350–500 or free trek · 4 km round trip · 360° valley + snow peak views · 2.5 hrs'},
       {t:760, tp:'r', tx:'Leave Tiffin Top · 15 min walk / scooty back to town'},
       {t:780, tp:'f', tx:'Lunch at Machan Rooftop · lake view, good thalis · 1 hr'},
       {t:855, tp:'r', tx:'Leave for Hanuman Garhi · 3 km northwest · 10 min'},
@@ -321,13 +318,13 @@ const D = [
       {t:915, tp:'v', tx:'Arrive Gurney House · Jim Corbett\'s former home · colonial architecture · great couple photo · 30 min'},
       {t:945, tp:'r', tx:'Leave for Pangot · 15 km northwest · 25 min'},
       {t:970, tp:'v', tx:'Arrive Pangot forest road · oak + rhododendron forest · 150+ birds · slow ride, stop for photos · golden hour'},
-      {t:1050,tp:'r', tx:'Head back from Pangot · 15 km · 25 min · sunset at 5:50 PM'},
+      {t:1050,tp:'r', tx:'Head back from Pangot · 15 km · 25 min · sunset ~5:50 PM'},
       {t:1075,tp:'b', tx:'Back in Nainital'},
       {t:1200,tp:'f', tx:'Dinner — Sher-e-Punjab (Punjabi) or Zooby\'s Kitchen · near Mall Road'},
     ]
   },
   {
-    date:'Sunday, 12 October — Last Day', theme:'East Lakes + Mall Road Farewell', base:480,
+    date:'Sunday, 25 October — Last Day', theme:'East Lakes + Mall Road Farewell Night', base:480,
     slots:[
       {t:480, tp:'w', tx:'Wake up · check out or leave luggage · quick breakfast at Hot Breads'},
       {t:540, tp:'r', tx:'Leave for Bhimtal · 22 km east · 40 min scooty'},
@@ -336,12 +333,14 @@ const D = [
       {t:690, tp:'v', tx:'Arrive Naukuchiatal · nine-cornered lake · almost no tourists · completely serene · 1 hr'},
       {t:750, tp:'r', tx:'Leave for Bhowali lunch dhabas · 15 km · 25 min'},
       {t:780, tp:'f', tx:'Lunch — Bhowali road dhabas · alu ke gutke + bhatt ki dal · 1 hr'},
-      {t:860, tp:'r', tx:'Leave for Mall Road, Nainital · 10 km · 20 min'},
-      {t:880, tp:'v', tx:'Arrive Mall Road · park scooty at Tallital lot (₹20/hr) · walk the road'},
-      {t:880, tp:'a', tx:'Last round on Mall Road · final shopping, chai + pakoras lakeside, photos · pick up Bal Mithai, Kumaoni honey, rhododendron jam'},
-      {t:1050,tp:'b', tx:'Return scooty · pack bags · early dinner by 6:30 PM'},
-      {t:1110,tp:'f', tx:'Early dinner before the drive · Sher-e-Punjab or Mall Road bites'},
-      {t:1170,tp:'r', tx:'Depart Nainital for Gurugram · ~7 hrs drive · arrive ~3–4 AM'},
+      {t:855, tp:'r', tx:'Back to Nainital · 10 km · 20 min'},
+      {t:875, tp:'r', tx:'5 min to Eco Cave Garden · Sukhatal area · open till 5:30 PM'},
+      {t:880, tp:'v', tx:'Eco Cave Garden · network of 6 interconnected caves · bring a torch · fun walk-through · 45 min'},
+      {t:925, tp:'w', tx:'Hotel · collect bags · pack · freshen up before evening'},
+      {t:1020,tp:'a', tx:'Mall Road + Tibetan Market — farewell stroll · last shopping, chai + pakoras lakeside · pick up Bal Mithai, Kumaoni honey, rhododendron jam · 1 hr'},
+      {t:1080,tp:'f', tx:'Quick dinner — Sher-e-Punjab or Mall Road bites · wrap up by 7:00 PM sharp'},
+      {t:1155,tp:'r', tx:'Leave hotel for bus stand · 20–30 min drive · reach by 7:45 PM', wa:1170, wt:'Bus at 8 PM — leaving after 7:30 PM is risky!'},
+      {t:1200,tp:'b', tx:'Board bus · 8:00 PM departure'},
     ]
   }
 ];
@@ -369,7 +368,7 @@ function fmtOff(o) {
   const a=Math.abs(o), h=Math.floor(a/60), m=a%60;
   return (o>0?'+':'−')+(h?h+'h ':'')+( (h&&m)||(!h&&m) ? m+'m' : '')+(o>0?' later':' earlier');
 }
-function isDone(di,si) { return localStorage.getItem(`nt-d${di}-${si}`)===  '1'; }
+function isDone(di,si) { return localStorage.getItem(`nt-d${di}-${si}`)==='1'; }
 function toggleDone(di,si,e) {
   e && e.stopPropagation();
   localStorage.setItem(`nt-d${di}-${si}`, isDone(di,si)?'0':'1');
@@ -449,10 +448,9 @@ function render() {
 })();
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
-// Auto-select current day based on real date
 (function(){
   const now=new Date();
-  const oct=new Date('2026-10-10');
+  const oct=new Date('2026-10-23');
   const diff=Math.floor((now-oct)/(1000*60*60*24));
   if(diff>=0 && diff<3) cur=diff;
   for(let j=0;j<3;j++) document.getElementById('t'+j).classList.toggle('active',j===cur);
